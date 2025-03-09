@@ -1,9 +1,9 @@
 streamlit
-prophet
 pandas
-plotly
 numpy
+plotly
+prophet
 statsmodels
-pmdarima
+lightgbm
 xgboost
-
+scikit-learn

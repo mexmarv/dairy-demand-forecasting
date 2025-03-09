@@ -117,9 +117,9 @@ if os.path.exists(SEASONALITY_PATH):
     st.plotly_chart(fig_seasonality, use_container_width=True)
     st.markdown("""
     **Fuentes de Datos**\n\n
-    **INEGI** – Estadísticas agropecuarias.\n\n   
-    **SIAP** – Servicio de Información Agroalimentaria y Pesquera.\n\n 
-    **FAO Dairy Market Review** – Reporte internacional sobre consumo de lácteos.\n\n
+    **INEGI** – Estadísticas agropecuarias.\n   
+    **SIAP** – Servicio de Información Agroalimentaria y Pesquera.\n 
+    **FAO Dairy Market Review** – Reporte internacional sobre consumo de lácteos.\n
     """)
 
 # 📌 Display Graph for Temperature and Price Trends

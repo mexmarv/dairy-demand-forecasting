@@ -4,6 +4,7 @@ import pickle
 import plotly.graph_objects as go
 import os
 import subprocess
+import sys  # ✅ IMPORTAR sys para evitar el NameError
 
 # ✅ Configuración inicial (Debe ser la primera línea)
 st.set_page_config(page_title="Pronóstico Alpura", page_icon="🥛", layout="wide")
@@ -39,11 +40,12 @@ st.plotly_chart(fig_seasonality, use_container_width=False)
 model_choice = st.sidebar.selectbox("Modelo de Pronóstico:", ["Facebook Prophet", "SAP IBP (LightGBM)", "Oracle SCM (XGBoost)"])
 days = st.sidebar.slider("Días a predecir:", 30, 365, 90)
 
+# 📌 Entrenar Modelos con `sys.executable` para evitar errores en Streamlit Cloud
 if st.sidebar.button("Entrenar Modelo"):
     st.info("🔄 Instalando dependencias y entrenando modelo...")
 
-    # ✅ Asegurar que todas las librerías están instaladas en el subproceso
-    subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+    # ✅ Instalar dependencias en el entorno de Streamlit Cloud antes de entrenar
+    subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir", "-r", "requirements.txt"])
 
     # ✅ Ejecutar el script de entrenamiento
     TRAIN_SCRIPTS = {

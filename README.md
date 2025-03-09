@@ -130,10 +130,6 @@ Este proyecto es de código abierto bajo la licencia **MIT**.
 ---
 
 ## **Contacto**
-📧 **[mexmarv@gmail.com](mailto:mexmarv@gmail.com)**  
-📌 **Repositorio en GitHub:** [mexmarv/dairy-demand-forecasting](https://github.com/mexmarv/dairy-demand-forecasting)  
+**[mexmarv@gmail.com](mailto:mexmarv@gmail.com)**  
+**Repositorio en GitHub:** [mexmarv/dairy-demand-forecasting](https://github.com/mexmarv/dairy-demand-forecasting)  
 
----
-
-🔥 **¡README.md listo para copiar y pegar en tu repositorio de GitHub!** 🚀  
-💡 **Pruébalo y dime si necesitas ajustes.** 😃  

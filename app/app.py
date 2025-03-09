@@ -49,7 +49,7 @@ df["Temperature"] = df["Temperature"].fillna(22)
 df["Price"] = df["Price"].fillna(20)
 
 # ✅ Sidebar: Model Selection
-model_choice = st.sidebar.selectbox("📡 Modelo de Pronóstico:", ["Facebook Prophet", "SAP IBP (LightGBM)", "Oracle SCM (XGBoost)"])
+model_choice = st.sidebar.selectbox("Modelo de Pronóstico:", ["Facebook Prophet", "SAP IBP (LightGBM)", "Oracle SCM (XGBoost)"])
 days = st.sidebar.slider("⏳ Días a predecir:", 30, 365, 90)
 
 # 📌 Train Model Button

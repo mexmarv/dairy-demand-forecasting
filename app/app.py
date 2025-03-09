@@ -7,7 +7,7 @@ import subprocess
 import sys  # ✅ IMPORTAR sys para evitar el NameError
 
 # ✅ Configuración inicial (Debe ser la primera línea)
-st.set_page_config(page_title="Pronóstico Alpura", page_icon="🥛", layout="wide")
+st.set_page_config(page_title="Pronóstico Demanda de Leche", page_icon="🥛", layout="wide")
 
 # ✅ Sidebar: Selección de Tema
 st.sidebar.title("Configuración del Pronóstico")
@@ -19,7 +19,8 @@ selected_theme = "plotly_dark" if theme_choice == "🌙 Oscuro" else "plotly_whi
 st.markdown(f"<style>body {{ background-color: {'#1e1e1e' if theme_choice == '🌙 Oscuro' else 'white'}; color: {'white' if theme_choice == '🌙 Oscuro' else 'black'}; }}</style>", unsafe_allow_html=True)
 
 # ✅ Restaurar Icono de Alpura y Título
-st.title("Pronóstico de Ventas - Leche Alpura Deslactosada 🥛")
+st.title("Pronóstico de Ventas - Leche Deslactosada en México 🥛")
+st.subheader("Sin gastar en SAP IBP o Oracle SCM")
 
 # 📌 Opción para subir un archivo CSV o usar el predeterminado
 uploaded_file = st.sidebar.file_uploader("📂 Sube tu archivo CSV", type=["csv"])

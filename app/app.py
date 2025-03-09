@@ -116,11 +116,10 @@ if os.path.exists(SEASONALITY_PATH):
     fig_seasonality.update_layout(title="Estacionalidad del Consumo de Lácteos en México", xaxis_title="Mes", yaxis_title="Índice de Consumo", template=selected_theme)
     st.plotly_chart(fig_seasonality, use_container_width=True)
     st.markdown("""
-    **Estacionalidad de la Demanda de Leche en México** 
-    **Fuentes de Datos** 
-    **INEGI** – Estadísticas agropecuarias.   
-    **SIAP** – Servicio de Información Agroalimentaria y Pesquera. 
-    **FAO Dairy Market Review** – Reporte internacional sobre consumo de lácteos.
+    **Fuentes de Datos**\n\n
+    **INEGI** – Estadísticas agropecuarias.\n\n   
+    **SIAP** – Servicio de Información Agroalimentaria y Pesquera.\n\n 
+    **FAO Dairy Market Review** – Reporte internacional sobre consumo de lácteos.\n\n
     """)
 
 # 📌 Display Graph for Temperature and Price Trends

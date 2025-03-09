@@ -1,0 +1,9 @@
+streamlit
+prophet
+pandas
+plotly
+numpy
+statsmodels
+pmdarima
+xgboost
+

@@ -7,11 +7,11 @@ import subprocess
 import sys
 
 # ✅ Configuración inicial (Debe ser la primera línea)
-st.set_page_config(page_title="Pronóstico Demanda Leche Alpura", page_icon="🥛", layout="wide")
+st.set_page_config(page_title="Pronóstico Demanda Leche", page_icon="🥛", layout="wide")
 
 # ✅ Sidebar: Theme Selection
-st.sidebar.title("⚙️ Configuración del Pronóstico")
-theme_choice = st.sidebar.radio("🎨 Modo de Visualización", ["🌙 Oscuro", "☀️ Claro"])
+st.sidebar.title("⚙Configuración del Pronóstico")
+theme_choice = st.sidebar.radio("Modo de Visualización", ["🌙 Oscuro", "☀️ Claro"])
 
 # ✅ Apply Theme Dynamically
 selected_theme = "plotly_dark" if theme_choice == "🌙 Oscuro" else "plotly_white"
@@ -113,14 +113,14 @@ if os.path.exists(SEASONALITY_PATH):
     seasonality_df = pd.read_csv(SEASONALITY_PATH)
     fig_seasonality = go.Figure()
     fig_seasonality.add_trace(go.Scatter(x=seasonality_df["Month"], y=seasonality_df["Seasonality"], mode='lines+markers', name="Estacionalidad", line=dict(color="blue")))
-    fig_seasonality.update_layout(title="📅 Estacionalidad del Consumo de Lácteos en México", xaxis_title="Mes", yaxis_title="Índice de Consumo", template=selected_theme)
+    fig_seasonality.update_layout(title="Estacionalidad del Consumo de Lácteos en México", xaxis_title="Mes", yaxis_title="Índice de Consumo", template=selected_theme)
     st.plotly_chart(fig_seasonality, use_container_width=True)
 
 # 📌 Display Graph for Temperature and Price Trends
 fig_external = go.Figure()
 fig_external.add_trace(go.Scatter(x=df["ds"], y=df["Temperature"], mode='lines', name="Temperatura", line=dict(color="red")))
 fig_external.add_trace(go.Scatter(x=df["ds"], y=df["Price"], mode='lines', name="Precio", line=dict(color="green")))
-fig_external.update_layout(title="📊 Variación de Temperatura y Precio", xaxis_title="Fecha", template=selected_theme)
+fig_external.update_layout(title="Variación de Temperatura y Precio", xaxis_title="Fecha", template=selected_theme)
 st.plotly_chart(fig_external, use_container_width=True)
 
 # 📌 Display Prediction Graph

@@ -20,7 +20,7 @@ st.markdown(f"<style>body {{ background-color: {'#1e1e1e' if theme_choice == '�
 
 # ✅ Restaurar Icono de Alpura y Título
 st.title("Pronóstico de Ventas - Leche Deslactosada en México 🥛")
-st.subheader("Sin gastar en SAP IBP o Oracle SCM")
+st.subheader("Sin gastar en SAP IBP u Oracle SCM :) ")
 
 # 📌 Opción para subir un archivo CSV o usar el predeterminado
 uploaded_file = st.sidebar.file_uploader("📂 Sube tu archivo CSV", type=["csv"])

@@ -10,7 +10,7 @@ import sys
 st.set_page_config(page_title="Pronóstico Demanda Leche", page_icon="🥛", layout="wide")
 
 # ✅ Sidebar: Theme Selection
-#st.sidebar.title("Configuración del Pronóstico")
+st.sidebar.title("Configuración del Pronóstico")
 #theme_choice = st.sidebar.radio("Modo de Visualización", ["🌙 Oscuro", "☀️ Claro"])
 
 # ✅ Apply Theme Dynamically

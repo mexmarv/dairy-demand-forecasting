@@ -39,9 +39,13 @@ st.plotly_chart(fig_seasonality, use_container_width=False)
 model_choice = st.sidebar.selectbox("Modelo de Pronóstico:", ["Facebook Prophet", "SAP IBP (LightGBM)", "Oracle SCM (XGBoost)"])
 days = st.sidebar.slider("Días a predecir:", 30, 365, 90)
 
-# 📌 Restaurar Botón de Entrenamiento
 if st.sidebar.button("Entrenar Modelo"):
-    st.info("🔄 Entrenando modelo...")
+    st.info("🔄 Instalando dependencias y entrenando modelo...")
+
+    # ✅ Asegurar que todas las librerías están instaladas en el subproceso
+    subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+
+    # ✅ Ejecutar el script de entrenamiento
     TRAIN_SCRIPTS = {
         "Facebook Prophet": "src/train_model.py",
         "SAP IBP (LightGBM)": "src/sap_ibp_forecast.py",
@@ -50,19 +54,20 @@ if st.sidebar.button("Entrenar Modelo"):
     script_path = TRAIN_SCRIPTS[model_choice]
 
     training_logs = st.empty()
-    process = subprocess.Popen(["python", script_path], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    
+    process = subprocess.Popen([sys.executable, script_path], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+
     log_text = ""
     for line in process.stdout:
         log_text += line + "\n"
         training_logs.text_area("📜 Registro de Entrenamiento:", log_text, height=200)
-    
+
     process.wait()
-    
+
     if process.returncode == 0:
         st.success(f"✅ {model_choice} entrenado correctamente.")
     else:
-        st.error(f"❌ Error en el entrenamiento.")
+        st.error(f"❌ Error en el entrenamiento. Revisa los logs.")
+
 
 # 📌 Cargar Modelo
 MODEL_PATHS = {"Facebook Prophet": "models/trained_model.pkl", "SAP IBP (LightGBM)": "models/sap_ibp_model.pkl", "Oracle SCM (XGBoost)": "models/oracle_scm_model.pkl"}

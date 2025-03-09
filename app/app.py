@@ -10,12 +10,12 @@ import sys
 st.set_page_config(page_title="Pronóstico Demanda Leche", page_icon="🥛", layout="wide")
 
 # ✅ Sidebar: Theme Selection
-st.sidebar.title("⚙Configuración del Pronóstico")
-theme_choice = st.sidebar.radio("Modo de Visualización", ["🌙 Oscuro", "☀️ Claro"])
+#st.sidebar.title("Configuración del Pronóstico")
+#theme_choice = st.sidebar.radio("Modo de Visualización", ["🌙 Oscuro", "☀️ Claro"])
 
 # ✅ Apply Theme Dynamically
-selected_theme = "plotly_dark" if theme_choice == "🌙 Oscuro" else "plotly_white"
-st.markdown(f"<style>body {{ background-color: {'#1e1e1e' if theme_choice == '🌙 Oscuro' else 'white'}; color: {'white' if theme_choice == '🌙 Oscuro' else 'black'}; }}</style>", unsafe_allow_html=True)
+#selected_theme = "plotly_dark" if theme_choice == "🌙 Oscuro" else "plotly_white"
+#st.markdown(f"<style>body {{ background-color: {'#1e1e1e' if theme_choice == '🌙 Oscuro' else 'white'}; color: {'white' if theme_choice == '🌙 Oscuro' else 'black'}; }}</style>", unsafe_allow_html=True)
 
 # ✅ Load Data
 DATA_PATH = "data/dairy_forecast_data.csv"
@@ -67,7 +67,7 @@ if st.sidebar.button("Entrenar Modelo"):
     log_text = ""
     for line in process.stdout:
         log_text += line + "\n"
-        training_logs.text_area("📜 Registro de Entrenamiento:", log_text, height=200)
+        training_logs.text_area("Registro de Entrenamiento:", log_text, height=200)
 
     process.wait()
     if process.returncode == 0:

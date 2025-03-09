@@ -10,6 +10,11 @@ import sys
 st.set_page_config(page_title="Pronóstico Demanda Leche", page_icon="🥛", layout="wide")
 
 # ✅ Sidebar: Theme Selection
+st.logo(
+    LOGO_URL_MEDIUM,
+    link="https://alpura.com/wp-content/uploads/2020/06/alpura-logo.png",
+    icon_image=LOGO_URL_SMALL,
+)
 st.sidebar.title("Configuración del Pronóstico")
 theme_choice = st.sidebar.radio("Modo de Visualización", ["🌙 Oscuro", "☀️ Claro"])
 

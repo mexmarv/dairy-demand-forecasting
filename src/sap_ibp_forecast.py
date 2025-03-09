@@ -8,7 +8,7 @@ from sklearn.metrics import mean_absolute_error
 # 📌 Cargar Datos
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_PATH = "data/dairy_forecast_data.csv"
-MODEL_PATH = "models/sap_ibp_model.pkl"  # 📌 Modelo optimizado
+MODEL_PATH = "models/sap_ibp_model.pkl"
 
 df = pd.read_csv(DATA_PATH, parse_dates=["Date"]).rename(columns={"Sales_Volume": "y", "Date": "ds"})
 

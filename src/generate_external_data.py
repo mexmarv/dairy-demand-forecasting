@@ -10,7 +10,6 @@ prices = np.random.uniform(18, 25, size=len(dates))
 
 df = pd.DataFrame({"ds": dates, "Temperature": temperature, "Price": prices})  # ✅ `ds` corregido
 
-os.makedirs("data", exist_ok=True)
-df.to_csv("data/external_factors.csv", index=False)
+df.to_csv("../data/external_factors.csv", index=False)
 
 print("✅ Datos de clima y precios generados correctamente.")

@@ -1,26 +1,26 @@
 # 🥛 Planeación de la Demanda de Leche - Dairy Demand Forecasting  
 
-📊 **Pronóstico de ventas de leche usando modelos avanzados de Machine Learning y Series Temporales.**  
+**Pronóstico de ventas de leche usando modelos avanzados de Machine Learning y Series Temporales.**  
 
 Este proyecto permite estimar la demanda futura de productos lácteos utilizando **Facebook Prophet, SAP IBP (SARIMA) y Oracle SCM (XGBoost)**.  
 
-📧 **Contacto:** [mexmarv@gmail.com](mailto:mexmarv@gmail.com)  
+**Contacto:** [mexmarv@gmail.com](mailto:mexmarv@gmail.com)  
 
 ---
 
 ## 🚀 **Características Principales**
 ✔ **Carga de Datos**: Permite subir un archivo CSV personalizado o usar un dataset predefinido.  
 ✔ **Modelos de Predicción**:  
-  - 🤖 **Facebook Prophet** → Modelo desarrollado por Meta, especializado en series temporales.  
-  - 🔢 **SAP IBP (SARIMA)** → Modelo ARIMA con estacionalidad, utilizado en planificación de la demanda.  
-  - 🚀 **Oracle SCM (XGBoost)** → Simulación del sistema de planificación de demanda de Oracle usando Machine Learning.  
+  - **Facebook Prophet** → Modelo desarrollado por Meta, especializado en series temporales.  
+  - **SAP IBP (SARIMA)** → Modelo ARIMA con estacionalidad, utilizado en planificación de la demanda.  
+  - **Oracle SCM (XGBoost)** → Simulación del sistema de planificación de demanda de Oracle usando Machine Learning.  
 ✔ **Interfaz en Streamlit**: Aplicación interactiva con cambio de tema (Modo Claro/Oscuro).  
 ✔ **Visualización de Estacionalidad**: Análisis de patrones de consumo en México.  
 ✔ **Entrenamiento en Vivo**: Permite reentrenar los modelos directamente desde la aplicación.  
 
 ---
 
-## 📂 **Estructura del Proyecto**
+## **Estructura del Proyecto**
 ```
 📦 dairy-demand-forecasting  
 ┣ 📂 app/  
@@ -44,7 +44,7 @@ Este proyecto permite estimar la demanda futura de productos lácteos utilizando
 
 ---
 
-## 🎯 **Cómo Ejecutar el Proyecto**
+## **Cómo Ejecutar el Proyecto**
 ### **1️⃣ Clonar el Repositorio**
 ```bash
 git clone https://github.com/mexmarv/dairy-demand-forecasting.git
@@ -75,48 +75,48 @@ python src/oracle_scm_forecast.py # Oracle SCM (XGBoost)
 ```bash
 streamlit run app/app.py
 ```
-✅ **Accede a la app en tu navegador:** [`http://localhost:8501`](http://localhost:8501)  
+**Accede a la app en tu navegador:** [`http://localhost:8501`](http://localhost:8501)  
 
 ---
 
-## 📈 **Modelos Utilizados**
-### **🤖 Facebook Prophet**
+## **Modelos Utilizados**
+### ** Facebook Prophet**
 - 📊 Modelo desarrollado por **Meta (Facebook)** para series temporales.  
 - ✅ Detecta **tendencias, estacionalidad y efectos especiales**.  
 
-### **🔢 SAP IBP (SARIMA)**
+### ** SAP IBP (SARIMA)**
 - 📊 Modelo ARIMA con estacionalidad, utilizado en **SAP Integrated Business Planning (IBP)**.  
 - ✅ Permite ajustar parámetros de tendencia y ciclos estacionales manualmente.  
 
-### **🚀 Oracle SCM (XGBoost)**
+### ** Oracle SCM (XGBoost)**
 - 📊 Simulación del modelo de **Demand Planning** de **Oracle SCM**.  
 - ✅ Usa Machine Learning (**XGBoost**) para mejorar la predicción de la demanda.  
 
 ---
 
-## 📅 **Estacionalidad de la Demanda de Leche en México**
+##  **Estacionalidad de la Demanda de Leche en México**
 ### 🔍 **Fuentes de Datos**
 📌 **INEGI** – Estadísticas agropecuarias.  
 📌 **SIAP** – Servicio de Información Agroalimentaria y Pesquera.  
 📌 **FAO Dairy Market Review** – Reporte internacional sobre consumo de lácteos.  
 
 ### **📊 Patrones de Demanda en México**
-- 🔺 **Alta demanda**: **Marzo–Agosto** 🌞  
-- 🔹 **Picos de consumo**: **Diciembre (Navidad) y Abril (Semana Santa)** 🎄  
-- 🔻 **Baja demanda**: **Septiembre–Noviembre** ❄️  
+- **Alta demanda**: **Marzo–Agosto**   
+- 🔹 **Picos de consumo**: **Diciembre (Navidad) y Abril (Semana Santa)**   
+- 🔻 **Baja demanda**: **Septiembre–Noviembre** ❄  
 
 ---
 
-## ⚙️ **Requerimientos**
+## ⚙**Requerimientos**
 - Python 3.8+
 - GitHub CLI (`gh`)
 - Librerías de Python (`pip install -r requirements.txt`)
 
 ---
 
-## 🤝 **Contribuciones**
+## **Contribuciones**
 ¡Si quieres mejorar este proyecto, eres bienvenido! 🚀  
-🔹 **Para contribuir:**  
+ **Para contribuir:**  
 1. **Fork** este repositorio.  
 2. Crea una nueva rama (`git checkout -b nueva_funcionalidad`).  
 3. Realiza cambios y haz un commit (`git commit -m "Agregado XYZ"`).  
@@ -124,12 +124,12 @@ streamlit run app/app.py
 
 ---
 
-## 📜 **Licencia**
+##  **Licencia**
 Este proyecto es de código abierto bajo la licencia **MIT**.  
 
 ---
 
-## 📩 **Contacto**
+## **Contacto**
 📧 **[mexmarv@gmail.com](mailto:mexmarv@gmail.com)**  
 📌 **Repositorio en GitHub:** [mexmarv/dairy-demand-forecasting](https://github.com/mexmarv/dairy-demand-forecasting)  
 

@@ -11,7 +11,7 @@ st.set_page_config(page_title="Pronóstico Demanda Leche", page_icon="🥛", lay
 
 # ✅ Sidebar: Theme Selection
 st.logo(
-    LOGO_URL_MEDIUM,
+    LOGO_URL_LARGE,
     link="https://alpura.com/wp-content/uploads/2020/06/alpura-logo.png",
     icon_image=LOGO_URL_SMALL,
 )

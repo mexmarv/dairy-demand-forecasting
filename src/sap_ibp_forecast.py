@@ -3,39 +3,42 @@ import os
 import pickle
 import lightgbm as lgb
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
 
-# 📌 Cargar Datos
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+# ✅ Load Data
 DATA_PATH = "data/dairy_forecast_data.csv"
+EXTERNAL_DATA_PATH = "data/external_factors.csv"
 MODEL_PATH = "models/sap_ibp_model.pkl"
 
 df = pd.read_csv(DATA_PATH, parse_dates=["Date"]).rename(columns={"Sales_Volume": "y", "Date": "ds"})
 
-# 📌 Crear Variables de Tiempo
+# ✅ Merge External Data
+if os.path.exists(EXTERNAL_DATA_PATH):
+    external_df = pd.read_csv(EXTERNAL_DATA_PATH, parse_dates=["Date"]).rename(columns={"Date": "ds"})
+    df = df.merge(external_df, on="ds", how="left")
+
+# ✅ Ensure No Missing Columns (Fixed for Pandas 3.0)
+df["Temperature"] = df["Temperature"].fillna(df["Temperature"].mean())
+df["Price"] = df["Price"].fillna(df["Price"].mean())
+
+
+# ✅ Create Features
 df["year"] = df["ds"].dt.year
 df["month"] = df["ds"].dt.month
 df["day"] = df["ds"].dt.day
 df["day_of_week"] = df["ds"].dt.dayofweek
 
-# 📌 Separar Datos en Entrenamiento y Prueba
-X = df[["year", "month", "day", "day_of_week"]]
+# ✅ Use Correct Features
+X = df[["year", "month", "day", "day_of_week", "Temperature", "Price"]]
 y = df["y"]
 
+# ✅ Train Model
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# 📌 Entrenar LightGBM en lugar de SARIMA
 lgb_model = lgb.LGBMRegressor(n_estimators=100, learning_rate=0.1, max_depth=5)
 lgb_model.fit(X_train, y_train)
 
-# 📌 Evaluar Precisión del Modelo
-y_pred = lgb_model.predict(X_test)
-mae = mean_absolute_error(y_test, y_pred)
-print(f"📊 MAE del modelo LightGBM (SAP IBP optimizado): {mae}")
-
-# 📌 Guardar Modelo en Formato Ligero
+# ✅ Save Model
 os.makedirs("models", exist_ok=True)
 with open(MODEL_PATH, "wb") as f:
     pickle.dump(lgb_model, f)
 
-print("✅ Modelo SAP IBP Optimizado con LightGBM Guardado")
+print("✅ SAP IBP (LightGBM) Model Trained and Saved.")

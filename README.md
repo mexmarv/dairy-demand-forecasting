@@ -15,7 +15,8 @@ Este proyecto permite estimar la demanda futura de productos lácteos utilizando
   - **SAP IBP (SARIMA)** → Modelo ARIMA con estacionalidad, utilizado en planificación de la demanda.  
   - **Oracle SCM (XGBoost)** → Simulación del sistema de planificación de demanda de Oracle usando Machine Learning.  
 ✔ **Interfaz en Streamlit**: Aplicación interactiva con cambio de tema (Modo Claro/Oscuro).  
-✔ **Visualización de Estacionalidad**: Análisis de patrones de consumo en México.  
+✔ **Visualización de Estacionalidad**: Análisis de patrones de consumo en México.
+✔ **Visualización de Temperatura y Precios**: Análisis de patrones de Temperatura y Precios (puede usarse a futuro como Demand Sensing).  
 ✔ **Entrenamiento en Vivo**: Permite reentrenar los modelos directamente desde la aplicación.  
 
 ---

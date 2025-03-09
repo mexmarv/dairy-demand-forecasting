@@ -2,7 +2,7 @@
 
 **Pronóstico de ventas de leche usando modelos avanzados de Machine Learning y Series Temporales.**  
 
-Este proyecto permite estimar la demanda futura de productos lácteos utilizando **Facebook Prophet, SAP IBP (SARIMA) y Oracle SCM (XGBoost)**.  
+Este proyecto permite estimar la demanda futura de productos lácteos utilizando **Facebook Prophet, SAP IBP (LightGBM) y Oracle SCM (XGBoost)**.  
 
 **Contacto:** [mexmarv@gmail.com](mailto:mexmarv@gmail.com)  
 

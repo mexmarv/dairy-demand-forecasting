@@ -84,9 +84,11 @@ streamlit run app/app.py
 - 📊 Modelo desarrollado por **Meta (Facebook)** para series temporales.  
 - ✅ Detecta **tendencias, estacionalidad y efectos especiales**.  
 
-### ** SAP IBP (SARIMA)**
-- 📊 Modelo ARIMA con estacionalidad, utilizado en **SAP Integrated Business Planning (IBP)**.  
-- ✅ Permite ajustar parámetros de tendencia y ciclos estacionales manualmente.  
+### **SAP IBP (LightGBM) (Optimizado)**
+- 📊 **Este modelo NO es SAP IBP oficial**, pero sigue una aproximación similar con Machine Learning.  
+- 📌 **SAP IBP original** usa ARIMA, ML y datos externos (clima, ventas, precios).  
+- ✅ **LightGBM se usa como una alternativa ligera** que aprende patrones temporales eficientemente.  
+ 
 
 ### ** Oracle SCM (XGBoost)**
 - 📊 Simulación del modelo de **Demand Planning** de **Oracle SCM**.  
